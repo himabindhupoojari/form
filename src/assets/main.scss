@@ -1,0 +1,112 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ececec;
+}
+
+@mixin fontStyle($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+.container {
+  width: 40%;
+  border: 1px solid #08054e;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  padding: 40px 0;
+  border-radius: 7px;
+  box-shadow: 0px 0px 3px 9px #ccc;
+  background-color: #fff;
+  h1 {
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  .form {
+    width: 70%;
+    margin: 20px auto 0px auto;
+    input,
+    select {
+      outline: 0;
+      display: block;
+    }
+    .row {
+      display: flex;
+      label {
+        width: 35%;
+        @include fontStyle(16px, normal);
+        margin: 20px 0;
+        display: flex;
+      }
+      input {
+        width: 64%;
+        height: 37px;
+        padding: 10px;
+        margin: 10px 0px 0px 0px;
+        @include fontStyle(16px, normal);
+        border-radius: 3px;
+      }
+      select {
+        width: 64%;
+        height: 37px;
+        margin: 10px 0px 0px 0px;
+        padding-left: 7px;
+        @include fontStyle(16px, normal);
+        border-radius: 3px;
+      }
+      .radio {
+        display: flex;
+        input {
+          width: inherit;
+          margin: 0px 3px 0px 0px;
+          height: inherit;
+        }
+        label {
+          margin: 24px 40px 0px 0px;
+          width: inherit;
+        }
+      }
+      label span {
+        color: red;
+        display: block;
+        @include fontStyle(19px, normal);
+        margin: 5px 0px 0px 5px;
+      }
+      .input_disable {
+        background-color: #ececec;
+        border: 1px solid #ececec;
+        color: #9f9797;
+      }
+      .input_enable {
+        background-color: transparent;
+        border: 1px solid #000;
+      }
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #08054e;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      color: #fff;
+      @include fontStyle(16px, normal);
+      margin-top: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: #2835d5;
+        border: 1px solid #2835d5;
+        transition: 3s ease-out;
+        @include fontStyle(16px, normal);
+      }
+    }
+  }
+}
